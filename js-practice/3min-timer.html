@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        var time;
+        function init(){
+            time=document.getElementById("time");
+            window.setInterval(countdown,1000);
+        };
+        function countdown(){
+            if(time.innerHTML>0){
+            time.innerHTML=time.innerHTML-1;
+            }else{
+                alert("該吃囉＠不然麵會爛掉")
+            }
+        }
+    </script>
+    <style type="text/css">
+        .sec{text-align:center;font-size:650px;color:yellow}
+        body{background-color:black}
+    </style>
+</head>
+<body onload="init();">
+    <div id="time" class="sec">180</div>
+</body>
+</html>
