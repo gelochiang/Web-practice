@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Score Counter</title>
+    <style type="text/css">
+        table{
+            border:7px solid yellowgreen;
+            border-collapse:collapse;
+            font-size:100px;
+            text-align:center;
+        }
+        .center{display:block;margin:auto}
+        .light-yellow{background-color:#FFFFCE}
+        .total-score{background-color:yellow;width:300px}
+        tr:nth-child(1){background-color:lightslategray}
+        h1{
+            background-color:black;
+            text-align:center;
+            width:100%;
+            color:yellow;
+        }
+    </style>
+    <script type="text/javascript">
+        var n1=1;
+        var n2=1;
+        function red(){
+            var redScore=document.getElementById("redTeam");
+            redScore.innerHTML=n1++;
+            redScore.style.fontWeight="bold";
+            redScore.style.color="red";
+        }
+        function blue(){
+            var blueScore=document.getElementById("blueTeam");
+            blueScore.innerHTML=n2++;
+            blueScore.style.fontWeight="bold";
+            blueScore.style.color="blue";
+        }
+    </script>
+</head>
+<body style="margin:0px;margin-top:0px">
+    <h1>小小計分板</h1>
+    <table class="center">
+        <tr>
+            <td></td>
+            <th style="width:530px">紅隊</th>
+            <th style="width:590px">藍隊</th>
+        </tr>
+        <tr>
+            <th class="total-score">得分數</th>
+            <td id="redTeam" class="light-yellow">0</td>
+            <td id="blueTeam" class="light-yellow">0</td>
+        </tr>
+    </table>
+    <button onclick="red()" style="background-color:#FF5151;font-size:173.5px">
+        紅隊得分
+    </button>
+    <span>
+        <button onclick="blue()" style="background-color:#84C1FF;font-size:173.5px">
+            藍隊得分
+        </button>
+    </span>
+</body>
+</html>
