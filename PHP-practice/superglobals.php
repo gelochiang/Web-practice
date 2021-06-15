@@ -70,8 +70,8 @@ $_SERVER["SCRIPT_URI"]：URI 用來指定要來訪問的頁面
     <title>Submit input txt</title>
 </head>
 <body>
-<form method="post" action="<? // method="post" 是一個屬性
-php echo $_SERVER['PHP_SELF'];?>">
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+// method="post" 是一個屬性
 Name: <input type="text" name="fname">
 <input type="submit">
 </form> // PHP form 讀取表單傳遞資料
