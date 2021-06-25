@@ -1,0 +1,52 @@
+/*
+order by syntax
+select column1,column2,...
+from table_name
+order by column1,column2,... asc|desc; // ascending(defult)|descending
+*/
+
+/*
+We have the table in database name's "Grade"
++-------------------+
+Name | Score |School
+Gelo | 75    | PCCU
+Leo  | 95    | YLSH
+Ace  | 90    | NTU
+Ann  | 95    | NTU
++-------------------+
+// order by exemple :
+select * from Grade
+order by School;
+# output : // alphabetically
+    Ace  | 90    | NTU
+    Ann  | 95    | NTU
+    Gelo | 75    | PCCU
+    Leo  | 95    | YLSH
+
+// order by descending exemple :
+select * from Grade
+order by Score desc;
+# output : // numeric descending
+    Leo  | 95    | YLSH
+    Ann  | 95    | NTU
+    Ace  | 90    | NTU
+    Gelo | 75    | PCCU
+
+// order by several columns example :
+select * from Grade
+order by Score,Name;
+#output : 
+    Gelo | 75    | PCCU
+    Ace  | 90    | NTU
+    Ann  | 95    | NTU
+    Leo  | 95    | YLSH
+
+// order by several columns example2 :
+select * Grade
+order by Score desc,Name;
+# output : 
+    Ann  | 95    | NTU
+    Leo  | 95    | YLSH
+    Ace  | 90    | NTU
+    Gelo | 75    | PCCU
+*/
