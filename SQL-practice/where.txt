@@ -1,0 +1,85 @@
+where syntax
+/*
+select column1,column2,...
+from table_name
+where condition;
+
+! NOTE : The where clause not only used in select statement , 
+         it is also used in update,delete,etc...
+
+We have the table in database name's "Grade"
++-----------+
+Name | Score
+Gelo | 75
+Ann  | 90
+Ace  | 90
++-----------+
+The following SQL statement select all the people from the name "Gelo",in the "Grade" table
+select * from Grade
+where Name="Gelo";
+# output : 
+    Gelo | 75
+
+// reverse
+select * from Grade
+where not Name="Ann";
+# output : 
+    Gelo | 75
+    Ace  | 90
+
+Numeric Example :
+select * from Grade
+where score=90;
+# output :
+    Ann  | 90
+    Ace  | 90
+*/
+
+/*
+Operators in the where clause
+1. = : Equal
+2. > : Greater than
+3. < : Less than
+4. >= : Greater than or equal
+5. <= : Less than or equal
+6. <> = " != " : Not equal
+7. between : Between the certain range
+8. like : Search for the pattern
+9. in : To specify multiple possible values for a column
+*/
+
+// between example :
+select * from Grade
+where Score between 60 and 80;
+# output : 
+     Gelo | 75
+
+// like example : 
+select * from Grade
+where Name like "%A"; // Searchs the name have "A" letter
+# output : 
+    Ann  | 90
+    Ace  | 90
+
+// in example : 
+select * from Grade
+where Name in ("Gelo","Ann");
+# output : 
+    Gelo | 75
+    Ann  | 90
+
+// and example :
+select * from Grade
+where Name="Gelo"
+and Score=75;
+# output : 
+    Gelo | 75
+
+// or example :
+select * from Grade
+where Name="Gelo"
+or Score=90;
+# output :
+    Gelo | 75
+    Ann  | 90
+    Ace  | 90
