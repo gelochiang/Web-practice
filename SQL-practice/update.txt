@@ -1,0 +1,43 @@
+/*
+update syntex :
+update table_name
+set column1=value1,column2=value2,...
+where condition;
+
+! NOTE : If omits the where claues,all records in table will be update
+*/
+
+/*
+We have the table in database name's "Grade"
++-------------------+
+Name | Score | School
+Gelo | 75    | PCCU
+Leo  | 95    | YLSH
+Ace  | 90    | NTU
+Ann  | 95    | NTU
++-------------------+
+// update table example :
+update Grade
+set Score=80,School="NCTU"
+where Name="Gelo";
+# output :
+    Name | Score | School
+    Gelo | 80    | NCTU
+    Leo  | 95    | YLSH
+    Ace  | 90    | NTU
+    Ann  | 95    | NTU
+
+// update multipal records example :
+update Grade
+set Score=100
+where School="NTU";
+# output :
+    Name | Score | School
+    Gelo | 80    | NCTU
+    Leo  | 95    | YLSH
+    Ace  | 100   | NTU
+    Ann  | 100   | NTU
+================================================================
+IMPORTANT : If omits where clause , all table will be update !!!
+================================================================
+*/
