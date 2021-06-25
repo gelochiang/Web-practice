@@ -1,0 +1,24 @@
+/*
+// clumn1,clumn2 are the field names of the table whic I want to select
+select clumn1,clumn2,...
+from table_name;
+
+// select all the fields available in table , use the fllowing syntax
+select * from table_name;
+*/
+
+/*
+Below is a selection from the "Family" table
++-------------------------+
+Member | Name | Work
+Dad    | Ace  | Engineer
+Mom    | Lisa | Worker
+Sister | Ann  | Student
+Me     | Gelo | Student
++-------------------------+
+If you want to select "Member","Name" in the table , use the fllowing syntax
+select Member,Name from Family;
+
+If wnat to select all table , use the fllowing syntax
+select * from Family; // * mean: all
+*/
