@@ -13,7 +13,7 @@ where column_name is not null;
 /*
 We have the table in database name's "Grade"
 +-------------------+
-Name | Score |School
+Name | Score | School
 Gelo | 75    | PCCU
 Leo  | 95    | YLSH
 Ace  | 90    | NTU
@@ -27,5 +27,15 @@ where is null;
 # output :
     No result // Because the table which named "Grade" is not have null
 @ Tip : Can Always use 'is null' to look for null values
-//
+
+// is not null example :
+select Name,Score
+from Grade
+where is not null;
+# output :
+    Name | Score
+    Gelo | 75   
+    Leo  | 95   
+    Ace  | 90   
+    Ann  | 95   
 */
