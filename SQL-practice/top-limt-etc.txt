@@ -1,0 +1,103 @@
+/*
+select top : Used to specify the number of records to return
+
+! NOTE : Not all db systems support the select top clause.
+         MySQL supports the limit clause to select a limited
+         number of records,while Oracle uses fetch first n rows only
+         and rownum
+
+// SQL Server / MS Access syntax :
+select top number|percent column_name(s)
+from table_name
+where condition;
+
+// MySQL syntax :
+select column_name(s)
+from table_name
+where condition
+limit number;
+
+// Oracle 12 syntax :
+select column_name(s)
+from table_name
+order by column_name(s)
+fetch first number rows only;
+
+// Older Oracle syntax;
+select column_name(s)
+from table_name
+where rownum <= number;
+
+// Older Oracle Syntax(with order by) :
+select *
+from(select solumn_name(s)from table_name order by column_name(s))
+where rownum <= number;
+*/
+
+/*
+We have the table in database name's "Grade"
++-------------------+
+Name | Score | School
+Gelo | 75    | PCCU
+Leo  | 95    | YLSH
+Ace  | 90    | NTU
+Ann  | 95    | NTU
++-------------------+
+// top example (for SQL Sever / MS Access) :
+select top 3 * from Grade; // Notice : *
+# output : 
+    Gelo | 75    | PCCU
+    Leo  | 95    | YLSH
+    Ace  | 90    | NTU
+
+// limit example (for MySQL) :
+select * from Grade limit 2;
+# output : 
+    Gelo | 75    | PCCU
+    Leo  | 95    | YLSH
+    Ace  | 90    | NTU
+
+// fetch example (for Oracle) :
+select * from Grade
+fetch first 2 rows only;
+# output : 
+    Gelo | 75    | PCCU
+    Leo  | 95    | YLSH
+    Ace  | 90    | NTU
+
+// top percent example (for SQL Sever / MS Access) :
+select top 50 percent from Grade;
+# output : 
+    Gelo | 75    | PCCU
+    Leo  | 95    | YLSH
+
+// fetch percent 50 percent example (for Oracle) :
+select * from Grade
+fetch first 50 percent rows only;
+# output : 
+    Gelo | 75    | PCCU
+    Leo  | 95    | YLSH
+
+// add a where clause example (for SQL Sever / MS Access) :
+select top 2 * from Grade
+where School="NTU";
+# output :
+    Ace  | 90    | NTU
+    Ann  | 95    | NTU
+
+// add a where clause example (for MySQL) :
+select * from Grade
+where School="NTU"
+limit 2;
+# output :
+    Ace  | 90    | NTU
+    Ann  | 95    | NTU
+
+// add a where clause example (for Oracle) :
+select * from Grade
+where School="NTU"
+fetch first 2 rows only;
+# output :
+    Ace  | 90    | NTU
+    Ann  | 95    | NTU
+*/
