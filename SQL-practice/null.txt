@@ -1,0 +1,31 @@
+/*
+// is null syntax :
+select column_name
+from table_name
+where column_name is null;
+
+// is not null syntax : 
+select column_name
+from table_name
+where column_name is not null;
+*/
+
+/*
+We have the table in database name's "Grade"
++-------------------+
+Name | Score |School
+Gelo | 75    | PCCU
+Leo  | 95    | YLSH
+Ace  | 90    | NTU
+Ann  | 95    | NTU
++-------------------+
+
+// is null example :
+select Name,Score,School
+from Grade
+where is null;
+# output :
+    No result // Because the table which named "Grade" is not have null
+@ Tip : Can Always use 'is null' to look for null values
+//
+*/
