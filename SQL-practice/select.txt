@@ -1,6 +1,6 @@
 /*
-// clumn1,clumn2 are the field names of the table which I want to select
-select clumn1,clumn2,...
+// column1,column2 are the field names of the table which I want to select
+select column1,column2,...
 from table_name;
 
 // select all the fields available in table , use the fllowing syntax
