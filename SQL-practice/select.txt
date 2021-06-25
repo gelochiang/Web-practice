@@ -3,7 +3,7 @@
 select column1,column2,...
 from table_name;
 
-// select all the fields available in table , use the fllowing syntax
+// select all the fields available in table , use the following syntax
 select * from table_name;
 */
 
@@ -16,9 +16,9 @@ Mom    | Lisa | Worker
 Sister | Ann  | Student
 Me     | Gelo | Student
 +-------------------------+
-If you want to select "Member","Name" in the table , use the fllowing syntax
+If you want to select "Member","Name" in the table , use the following syntax
 select Member,Name from Family;
 
-If wnat to select all table , use the fllowing syntax
+If wnat to select all table , use the following syntax
 select * from Family; // * mean: all
 */
