@@ -1,5 +1,5 @@
 /*
-// clumn1,clumn2 are the field names of the table whic I want to select
+// clumn1,clumn2 are the field names of the table which I want to select
 select clumn1,clumn2,...
 from table_name;
 
