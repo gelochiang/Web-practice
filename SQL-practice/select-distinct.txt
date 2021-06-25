@@ -1,0 +1,23 @@
+/*
+We have the table in database name's "Grade"
++-----------+
+Name | Score
+Gelo | 75
+Ann  | 90
+Ace  | 90
++-----------+
+// The following SQL statement selects only the distinct values
+   from "Score" column in the "Grade" table
+select distinct Score from Grade;
+# output : 75,90
+
+// The following SQL statement list the number distinct Score
+select count(distinct Score) from Grade;
+# output : 2
+
+! NOTE : The example above is will not work in firefox
+
+The following example from MS Access
+select count(*) as DistinctScore
+from (select distinct Score from Grade);
+*/
