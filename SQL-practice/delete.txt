@@ -1,0 +1,30 @@
+/*
+delete syntax :
+delete from table_name where condition;
+
+! NOTE : If omits the where clause , all the records will be deleted !
+*/
+
+/*
+We have the table in database name's "Grade"
++-------------------+
+Name | Score | School
+Gelo | 75    | PCCU
+Leo  | 95    | YLSH
+Ace  | 90    | NTU
+Ann  | 95    | NTU
++-------------------+
+
+// delete example :
+delete from Grade where Name="Leo";
+# upload :
+    Name | Score | School
+    Gelo | 75    | PCCU
+    Ace  | 90    | NTU
+    Ann  | 95    | NTU
+
+// delete all records example :
+delete from Grade;
+# output :
+    No resule
+*/
