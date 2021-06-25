@@ -1,0 +1,31 @@
+/*
+insert into statement in two ways :
+// Specify both the column names and the values to be inserted
+insert into table_name(column1,column2,...)
+values(value1,value2,...);
+
+// If adding values for all the columns of the table
+insert into table_name
+values(value1,value2,...);
+*/
+
+/*
+We have the table in database name's "Grade"
++-------------------+
+Name | Score |School
+Gelo | 75    | PCCU
+Leo  | 95    | YLSH
+Ace  | 90    | NTU
++-------------------+
+// insert data only in specified columns example :
+insert into Grade(Name,Score,School)
+values("Ann","95","NTU");
+# new-table :
++-------------------+
+Name | Score |School
+Gelo | 75    | PCCU
+Leo  | 95    | YLSH
+Ace  | 90    | NTU
+Ann  | 95    | NTU
++-------------------+
+*/
