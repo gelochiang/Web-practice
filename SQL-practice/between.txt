@@ -1,0 +1,89 @@
+/*
+The between operator selects values within a given range.
+The values can be numbers, text, or dates.
+
+// between syntax :
+select column_name(s)
+from table_name
+where column_name between value1 and value2;
+*/
+
+/*
+We have the table in database name's "Grade"
++-------------------+
+Name | Score | School
+Gelo | 75    | PCCU
+Leo  | 95    | YLSH
+Lin  | 100   | NCTU
+Ace  | 90    | NTU
+Ann  | 95    | NTU
++-------------------+
+We have the table in database name's "Birthday"
++-------------------+
+Name  | Born
+Gelo  | 2003/2/18
+Nick  | 2003/8/7
+Ann   | 2013/9/11
+Black | 2002/9/30
++-------------------+
+// between example :
+select * from Grade
+where Score between 90 and 95;
+# output :
+    Leo  | 95    | YLSH
+    Ace  | 90    | NTU
+    Ann  | 95    | NTU
+
+// not between example :
+select * from Grade
+where Score not between 90 and 95;
+# output :
+    Gelo | 75    | PCCU
+    Lin  | 100   | NCTU
+
+// between with in example :
+select * from Grade
+where Score between 90 and 95
+and not in (90);
+# output :
+    Leo  | 95    | YLSH
+    Ann  | 95    | NTU
+
+// between text values example :
+select * from Grade
+where Name between "Ann" and "Leo";
+# output :
+    Gelo | 75    | PCCU
+    Leo  | 95    | YLSH
+    Ann  | 95    | NTU
+
+// between text values oder by example :
+select * from Grade
+where Name between "Ann" and "Leo"
+order by Score desc;
+# output :
+    Ann  | 95    | NTU
+    Leo  | 95    | YLSH
+    Gelo | 75    | PCCU
+
+// not between text values example :
+select * from Grade
+where Name not between "Ann" and "Leo"
+order by Score desc;
+# output :
+    Lin  | 100   | NCTU
+    Ace  | 90    | NTU
+
+// between dates example :
+select * Birthday
+where Born between #2003/2/1# and #2003/9/30#;
+# output :
+    Gelo  | 2003/2/18
+    Nick  | 2003/8/7
+----------------------or----------------------
+select * Birthday
+where Born between "2003/2/1" and "2003/9/30";
+# output :
+    Gelo  | 2003/2/18
+    Nick  | 2003/8/7
+*/
