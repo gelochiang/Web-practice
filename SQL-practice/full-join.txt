@@ -1,0 +1,43 @@
+/*
+// full join syntax :
+select column_name(s)
+from table1
+full join table2
+on table1.column_name = table2.column_name
+where condition;
+
+@ Tip : full join & full outer join are the same
+
+! NOTE : full join can potentally return vary large result-sets
+*/
+
+/*
+// Let's look at a selection from the "ID" table :
++-----------------------+
+SchoolID | No | Finish
+=========================
+712072   | 4  | 2021/5/20
+712222   | 11 | 2021/5/30
+712787   | 8  | 2021/6/15
++-----------------------+
+
+// Then, look at a selection from the "Student" table :
++----------------+
+No | Name  | Class
+==================
+4  | Gelo  | 104
+13 | Black | 112
+9  | Nick  | 109
++----------------+
+// full join example :
+select Student.Name, Student.No, ID.Finish
+from ID
+full join Student on ID.No = Student.No
+order by Student.Class;
+# output :
+    Name  | No   | Finish
+    ========================
+    Gelo  | 4    | 2021/5/20
+    Nick  | null | null
+    Black | null | null
+*/
