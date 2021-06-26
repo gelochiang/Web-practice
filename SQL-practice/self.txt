@@ -1,0 +1,29 @@
+/*
+// self join syntax :
+select column_name(s)
+from table T1, table T2
+where condition;
+
+% T1 and T2 are different table aliases for he same table
+*/
+
+/*
+We have the table in database name's "Grade"
++-------------------+
+Name | Score | School
+=====================
+Gelo | 75    | PCCU
+Leo  | 95    | YLSH
+Ace  | 90    | NTU
+Ann  | 95    | NTU
++-------------------+
+select x.Name as "Name 1", y.Name as "Name 2", x.School
+from Grade x, Grade y
+where x.School = y.School
+Order by Score desc;
+# output : 
+    Name | School
+    =============
+    Ann  | NTU
+    Ace  | NTU
+*/
