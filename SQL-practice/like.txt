@@ -1,0 +1,86 @@
+/*
+There are two wildcards often used in conjunction with the like operator :
+1. The percent sign(%) represents zero, one, or multiple characters.
+2. The underscore sign(_) represents one, single character.
+
+! NOTE : MS Access uses an asterisk(*) instead of the percent sign(%),
+         and a question mark(?) insetad of the underscore(_).
+
+The percent sign and the underscore can also be used in combination.
+
+// like syntax :
+    select column1,column2,...
+    from table_name
+    where columnN like pattern;
+
+@ Tip : We can also combine any number of conditions using and/or operators. 
+
+// Here are some examples showing differenet like operators with "%" and "_" wildcards :
+
+like operator          | description
+======================================================================================================
+where Name like "a%"   | Finds any values that start with "a"
+where Name like "%a"   | Finds any values that end with "a"
+where Name like "%or"  | Finds any values that have "or" in any position
+where Name like "_r%"  | Finds any values that have "r" in second position
+where Name like "a_%"  | Finds any values that start with "a" and are at least 2 characters in length
+where Name like "a__%" | Finds any values taat start with "a" and are at least 3 characters in length
+where Name like "a%o"  | Finds any values that start with "a" and ends with "o"
+*/
+
+/*
+We have the table in database name's "Grade"
++-------------------+
+Name | Score | School
+Gelo | 75    | PCCU
+Leo  | 95    | YLSH
+Ace  | 90    | NTU
+Ann  | 95    | NTU
++-------------------+
+// like "A\%" example :
+select * from Grade
+where Name like "A%";
+# output : 
+    Ace  | 90    | NTU
+    Ann  | 95    | NTU
+
+// like "%o" example :
+select * from Grade
+where Name like "%o";
+# output :
+    Gelo | 75    | PCCU
+    Leo  | 95    | YLSH
+
+// like "%el%" example :
+select * form Grade
+where Name like "%el%";
+# output :
+    Gelo | 75    | PCCU
+
+// like "_e%" example :
+select * from Grade
+where Name like "_e%";
+# output :
+    Gelo | 75    | PCCU
+    Leo  | 95    | YLSH
+
+// like "A__%" example :
+select * from Grade
+where Name like "A__%";
+# output :
+    Ace  | 90    | NTU
+    Ann  | 95    | NTU
+
+// like "A%e" example :
+select * from Grade
+where Name like "A%e";
+# output :
+    Ace  | 90    | NTU
+
+// not like "A%" example :
+select * from Grade
+where Name not like "A%";
+# output :
+    Gelo | 75    | PCCU
+    Leo  | 95    | YLSH
+*/
