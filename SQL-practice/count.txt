@@ -1,0 +1,44 @@
+/*
+// count() syntax :
+select count(column_name)
+from table_name
+where condition;
+
+// avg() syntax : 
+seclet avg(column_name)
+from table_name
+where condition;
+
+// sum() syntax :
+select sum(column_name)
+from table_name
+where condition;
+*/
+
+/*
+We have the table in database name's "Grade"
++-------------------+
+Name | Score | School
+Gelo | 75    | PCCU
+Leo  | 95    | YLSH
+Ace  | 90    | NTU
+Ann  | 95    | NTU
++-------------------+
+// count() example :
+select count(Name)
+from Grade;
+# output :
+    4
+
+// avg() example :
+select avg(Score)
+from Grade;
+# output :
+    88.75
+
+// sum() example :
+select sum(Score)
+from Grade;
+# output : 
+    355
+*/
