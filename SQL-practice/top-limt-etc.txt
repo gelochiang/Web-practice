@@ -7,7 +7,7 @@ select top : Used to specify the number of records to return
          and rownum
 
 // SQL Server / MS Access syntax :
-select top number|percent column_name(s)
+select top number|percent * column_name(s)
 from table_name
 where condition;
 
@@ -66,7 +66,7 @@ fetch first 2 rows only;
     Ace  | 90    | NTU
 
 // top percent example (for SQL Sever / MS Access) :
-select top 50 percent from Grade;
+select top 50 percent * from Grade;
 # output : 
     Gelo | 75    | PCCU
     Leo  | 95    | YLSH
