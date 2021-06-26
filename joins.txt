@@ -32,8 +32,8 @@ on ID.No=Student.No;
     9  | Nick  |2021/6/15
 
 // Here are the different types of the joins in SQL :
- · (inner) join : Returns records that have matching values in both tables
- · left (outer) join : Returns all records from the left table , and the matched records from the right table
- · right (outer) join : Returns all records from the right table , and the matched records from the left table
- · full (outer) join : Returns al records when there is a match in either left or right table
+ · (inner) join : Returns records that have matching values in both tables.
+ · left (outer) join : Returns all records from the left table , and the matched records from the right table.
+ · right (outer) join : Returns all records from the right table , and the matched records from the left table.
+ · full (outer) join : Returns al records when there is a match in either left or right table.
 */
