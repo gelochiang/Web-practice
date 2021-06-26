@@ -1,0 +1,95 @@
+/*
+// alias column syntax :
+seclect column_name as alias_name
+from table_name;
+
+// slias table syntax :
+select column_name(s)
+from table_name as alies_name;
+*/
+
+/*
+We have the table in database name's "Grade"
++-------------------+
+Name | Score | School
+Gelo | 75    | PCCU
+Leo  | 95    | YLSH
+Lin  | 100   | NCTU
+Ace  | 90    | NTU
+Ann  | 95    | NTU
++-------------------+
+We have the second table in database name's "Birthday"
++-------------------+
+Name | Born
+Gelo | 2003/2/18
+Leo  | 2004/5/29
+Lin  | 2003/7/6
+Ace  | 1973/2/10
+Ann  | 2013/9/11
++-------------------+
+// alias example :
+select Name as Student, Score as Got
+from Grade;
+# output :
+    Student | Got | School
+    Gelo    | 75  | PCCU
+    Leo     | 95  | YLSH
+    Lin     | 100 | NCTU
+    Ace     | 90  | NTU
+    Ann     | 95  | NTU
+
+// example2 :
+select Name as "Student Name", Score as Got
+from Grade;
+# output :
+    Student Name | Got | School
+    Gelo         | 75  | PCCU
+    Leo          | 95  | YLSH
+    Lin          | 100 | NCTU
+    Ace          | 90  | NTU
+    Ann          | 95  | NTU
+! NOTE : It requires double quotation("") marks or square brackets([])
+         if the alias name contains spaces
+
+// conbine as example :
+select Name, School+" / Final exam score : "+Score as Got
+from Grade;
+# output :
+    Student | Got
+    Gelo    | PCCU / Final exam score : 75
+    Leo     | YLSH / Final exam score : 95
+    Lin     | NCTU / Final exam score : 100
+    Ace     | NTU / Final exam score : 90
+    Ann     | NTU / Final exam score : 95
+
+// conbine as example (for My SQL) :
+select Name, (School," / Final exam score : ",Score) as Got
+from Grade;
+# output :
+    Student | Got
+    Gelo    | PCCU / Final exam score : 75
+    Leo     | YLSH / Final exam score : 95
+    Lin     | NCTU / Final exam score : 100
+    Ace     | NTU / Final exam score : 90
+    Ann     | NTU / Final exam score : 95
+
+// Uses the "Grade" and "Birthday" tables, and give them the table aliases of
+   "G" and "B" respectively (Here we use aliases to make the SQL shorter) 
+   example :
+select G.Name, G.School, B.Born
+from Grade as G, Birthday as B
+where G.Name="Gelo" and G.Name=B.Name;
+# output :
+    Name | School | Born
+    Gleo | PCCU   | 2003/2/18
+--------------------------or--------------------------
+select Grade.Name, Grade.School, Birthday.Born
+from Grade,Birthday
+where Grade.Name="Gelo" and Grade.Name=Birthday.Name;
+
+@ Tips :
+  · There are more than one table involved in a query
+  · Function are used in the query
+  · Column names are big or not very readable
+  · Two or more columns are combined together
+*/
