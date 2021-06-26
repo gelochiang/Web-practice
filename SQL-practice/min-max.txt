@@ -1,0 +1,39 @@
+/*
+SQL min() / max() function
+The min() function returns the smallest value of the selected column.
+The max() function retruns the largest value of the selected column.
+
+// min() syntax :
+select min(column_name)
+from table_name
+where condition;
+
+// max() syntax :
+select max(column_name)
+from table_name
+where condition;
+*/
+
+/*
+We have the table in database name's "Grade"
++-------------------+
+Name | Score | School
+Gelo | 75    | PCCU
+Leo  | 95    | YLSH
+Ace  | 90    | NTU
+Ann  | 95    | NTU
++-------------------+
+// min() example :
+select min(Score) as bad-guy // as : gives min(Score) the name "bad-guy"
+from Grade;
+# output :
+    bad-guy
+    75
+
+// max() example :
+select max(Score) as good-person
+from Grade;
+# output :
+    good-person
+    95
+*/
