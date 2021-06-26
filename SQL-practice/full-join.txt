@@ -21,6 +21,7 @@ SchoolID | No | Finish
 712787   | 8  | 2021/6/15
 +-----------------------+
 
+/*
 // Then, look at a selection from the "Student" table :
 +----------------+
 No | Name  | Class
@@ -29,7 +30,6 @@ No | Name  | Class
 13 | Black | 112
 9  | Nick  | 109
 +----------------+
-/*
 // full join example :
 select Student.Name, Student.No, ID.Finish
 from ID
