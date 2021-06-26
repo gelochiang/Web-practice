@@ -1,0 +1,48 @@
+/*
+in syntax :
+select column_name(s)
+from table_name
+where coulumn_name in (value1, value2, ...);
+----------------------or----------------------
+select column_name(s)
+from table_name
+where column_name in (select statement);
+*/
+
+/*
+We have the table in database name's "Grade"
++-------------------+
+Name | Score | School
+Gelo | 75    | PCCU
+Leo  | 95    | YLSH
+Lin  | 100   | NCTU
+Ace  | 90    | NTU
+Ann  | 95    | NTU
++-------------------+
+We have the second table in database name's "Grade2"
++-------------------+
+Name  | Score | School
+Mick  | 60    | YLSH
+Black | 80    | PCCU
++-------------------+
+// in example :
+select * from Grade
+where School in ("NCTU","NTU");
+# output :
+    Ace  | 90    | NTU
+    Ann  | 95    | NTU
+
+// not in example :
+select * from Grade
+where School not in ("NCTU","NTU");
+# output :
+    Gelo | 75    | PCCU
+    Leo  | 95    | YLSH
+
+// in (select School from Grade2) example :
+select * from Grade
+where School in (select School from Grade2); // in (select ... from ...) : select the second table
+# output :
+    Gelo | 75    | PCCU
+    Leo  | 95    | YLSH
+*/
