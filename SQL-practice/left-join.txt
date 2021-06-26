@@ -1,0 +1,45 @@
+/*
+// left join syntax :
+select clumn_name(s)
+from table1
+left join table2
+on table1.column_name = table2.column_name;
+
+! NOTE : In some db left join is called left outer join
+*/
+
+/*
+// Let's look at a selection from the "ID" table :
++-----------------------+
+SchoolID | No | Finish
+=========================
+712072   | 4  | 2021/5/20
+712222   | 11 | 2021/5/30
+712787   | 9  | 2021/6/15
++-----------------------+
+
+// Then, look at a selection from the "Student" table :
++----------------+
+No | Name  | Class
+==================
+4  | Gelo  | 104
+11 | Black | 112
+9  | Nick  | 109
++----------------+
+
+// left join example :
+select ID.SchoolID, Student.Name
+from ID
+left join Student
+on ID.No = Student.No
+order by ID.SchoolID;
+# output :
+    SchoolID | Name
+    ================
+    712072   | Gelo
+    712222   | Black
+    712787   | Nick
+
+! NOTE : The left join keyword returns all records from the left table,
+         even if there are no matches in the right table
+*/
