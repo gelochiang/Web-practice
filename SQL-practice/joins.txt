@@ -1,0 +1,39 @@
+/*
+A join clause is used to combine rows from two or more tables,
+based on a related column between them.
+
+// Let's look at a selection from the "ID" table :
++-----------------------+
+SchoolID | No | Finish
+=========================
+712072   | 4  | 2021/5/20
+712222   | 11 | 2021/5/30
+712787   | 9  | 2021/6/15
++-----------------------+
+
+// Then, look at a selection from the "Student" table :
++----------------+
+No | Name  | Class
+==================
+4  | Gelo  | 104
+11 | Black | 112
+9  | Nick  | 109
++----------------+
+// inner join example :
+select ID.No, Student.Name, ID.Finish
+from ID
+inner join Student
+on ID.No=Student.No;
+# output :
+    No | Name  |Finish
+    =====================
+    4  | Gelo  |2021/5/20
+    11 | Black |2021/5/30
+    9  | Nick  |2021/6/15
+
+// Here are the different types of the joins in SQL :
+ · (inner) join : Returns records that have matching values in both tables.
+ · left (outer) join : Returns all records from the left table , and the matched records from the right table.
+ · right (outer) join : Returns all records from the right table , and the matched records from the left table.
+ · full (outer) join : Returns al records when there is a match in either left or right table.
+*/
