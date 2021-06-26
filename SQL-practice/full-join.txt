@@ -29,6 +29,7 @@ No | Name  | Class
 13 | Black | 112
 9  | Nick  | 109
 +----------------+
+/*
 // full join example :
 select Student.Name, Student.No, ID.Finish
 from ID
