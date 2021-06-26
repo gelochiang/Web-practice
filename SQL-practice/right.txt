@@ -1,0 +1,44 @@
+/*
+// right join syntax :
+select column_name(s)
+from table1
+right join table2
+on table.column_name = table2.column_name;
+
+! NOTE : In some db right join is called right outer join
+*/
+
+/*
+// Let's look at a selection from the "ID" table :
++-----------------------+
+SchoolID | No | Finish
+=========================
+712072   | 4  | 2021/5/20
+712222   | 11 | 2021/5/30
+712787   | 9  | 2021/6/15
++-----------------------+
+
+// Then, look at a selection from the "Student" table :
++----------------+
+No | Name  | Class
+==================
+4  | Gelo  | 104
+11 | Black | 112
+9  | Nick  | 109
++----------------+
+
+// right join example :
+select Student.Name, Student.No, ID.Finish
+from ID
+right join Student on ID.No = Student.No
+order by Student.Class;
+# output :
+    Name  | No | Finish
+    ======================
+    Gelo  | 4  | null
+    Nick  | 9  | 2021/6/15
+    Black | 11 | 2021/5/30
+
+// The right join keyword returns all records from the riht table,
+   even if ther are no matches in the left table.
+*/
