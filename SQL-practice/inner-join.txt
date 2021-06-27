@@ -35,7 +35,9 @@ StudyNo | Room | Time
 +---------------------+
 // inner join example :
 select ID.No, Student.Name
-from ID on ID.No = Student.No;
+from ID 
+inner join Student
+on ID.No = Student.No;
 # output :
     No | Name
     ==========
