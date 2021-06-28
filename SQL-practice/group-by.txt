@@ -1,0 +1,66 @@
+/*
+The group by statement groups rows that have the same values into summary rows,
+like "find the number of customers in each country".
+
+The group by statement is often used with aggregate fumctions
+(dount(), max(), min(), sum(), avg()) to group the result-set
+by one or more columns.
+
+// group by syntax :
+select couumn_name(s)
+from table_name
+where condition
+group by column_name(s)
+order by column_name(s);
+*/
+
+/*
+// Let's look at a selection from the "Student" table :
++-----------------+
+Name   | No | Class
+===================
+Mickle | 7  | A
+Black  | 11 | A
+Jack   | 9  | B
+Gelo   | 2  | A
+Ann    | 6  | B
+Leo    | 19 | C
++-----------------+
+
+// Then, look at a selection from the "Teacher" table :
++-----------------+
+Class | TeacherName
+===================
+A     | Mr.Bob
+A     | Mr.Chiang
+B     | Mr.Bean
+C     | Ms.Lin
+C     | Ms.Angle
+C     | Ms.Lina
++-----------------+
+
+// group by example :
+select count(Name), Class
+from Student
+group by Class
+order by Class;
+# output :
+    count(Name) | Class
+    ===================
+    3           | A 
+    2           | B 
+    1           | C
+
+// group up with join example :
+select Student.Class, count(Teacher.Class) as "number of teacher"
+from Student
+right join Teacher on Student.Class = Teacher.Class
+group up Teacher.Class
+order by Class;
+# output :
+    Class | number of teacher
+    =========================
+    A     | 2
+    B     | 1
+    C     | 3
+*/
