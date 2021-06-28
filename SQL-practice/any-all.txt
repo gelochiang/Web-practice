@@ -1,0 +1,89 @@
+/*
+// any syntax :
+select column_name
+from table_name
+where column_name operator any
+(select column_name from table_name where condition);
+
+! NOTE : The operator must be a standard comparison operator
+         (=, <>, !=, >, >=, <, or <=)
+
+// all syntax with select :
+select all column_name(s)
+from table_name
+where condition;
+
+// all syntax with where or having :
+select column_name(s)
+from table_name
+where column_name operator all
+(select column_name from table_name where condition);
+
+! NOTE : The operator must be a standard comparison operator
+         (=, <>, !=, >, >=, <, or <=)
+*/
+
+/*
+// Let's look at a selection from the "Student" table :
++-------------------------+
+Name   | No | Score | Class
+===========================
+Mickle | 7  | 95    | A
+Black  | 11 | 84    | A
+Jack   | 9  | 92    | B
+Gelo   | 2  | 75    | A
+Ann    | 6  | 98    | B
+Leo    | 19 | 62    | C
++-------------------------+
+
+// Then, look at a selection from the "Teacher" table :
++-----------------------+
+Class | TeacherName | Old
+=========================
+A     | Mr.Bob      | 61
+B     | Mr.Bean     | 42
+C     | Ms.Lina     | 54
++-----------------------+
+
+// any equal example :
+select Name from Student
+where Class = any (select Class from Teacher where Class = "A");
+// output :
+    Name
+    ======
+    Mickle
+    Black
+    Gelo
+
+// any > example :
+select Name from Student
+where Class = any (select Class form Teacher where Old > 50)
+order by Score desc;
+# output :
+    Name
+    ======
+    Ann   
+    Mickle 
+    Jack   
+    Black  
+    Gelo   
+
+// all example :
+select all Name from Student
+where true;
+# output :
+    Name
+    ======
+    Mickle 
+    Black  
+    Jack   
+    Gelo   
+    Ann    
+    Leo    
+
+// other all example :
+select Name from Student
+where Class = all (select Class from Teacher where Class = "A");
+# output :
+    no result // Because The Class column from Teacher Table are not all equal "A"
+*/
