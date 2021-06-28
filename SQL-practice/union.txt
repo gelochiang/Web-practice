@@ -1,0 +1,106 @@
+/*
+// union syntax :
+select column_name(s) from table1
+union
+select column_name(s) from table2;
+
+@ The union operator selects only distinct values by default.
+  To allow duplicate values, use union all.
+
+// union all syntax :
+select column_name(s) from table1
+union all
+select column_name(s) from table2;
+
+! NOTE : The column names in the result-set are usually equal to
+         the column names in the first select statement.
+*/
+
+/*
+// Let's look at a selection from the "ID" table :
++---------------------+
+Name   | No | Finish
+=======================
+Mickle | 7  | 2021/5/20
+Black  | 11 | 2021/5/30
+Jack   | 9  | 2021/6/15
++---------------------+
+
+// Then, look at a selection from the "Student" table :
++----------------+
+No | Name  | Class
+==================
+4  | Gelo  | 104
+11 | Black | 112
+9  | Nick  | 109
++----------------+
+
+// union example :
+select No from ID
+union
+select No from Student
+order by No;
+# output :
+    No
+    ==
+    4
+    7
+    9
+    11
+
+// union all example :
+select No from ID
+union all
+select No from Student
+oder by No;
+# output :
+    No
+    ==
+    4
+    7
+    9
+    9
+    11
+    11
+
+// union with where example :
+select Name, No from ID
+where Name = "Black"
+union
+select Name, No from Student
+where No = 11
+order by No;
+# output :
+    Name  | No
+    ==========
+    Black | 11
+
+// union all with where example :
+select Name, No from ID
+where Name = "Black"
+union all
+select Name, No from Student
+where No = 11
+order by No;
+# output :
+    Name  | No
+    ==========
+    Black | 11
+    Black | 11
+
+// Another union example :
+select "ID" as "From", Name, No
+from ID
+union
+select "Student", Name, No
+from Student;
+# output :
+    From    | Name   | No
+    =====================
+    ID      | Mickle | 7
+    ID      | Black  | 11 
+    ID      | Jack   | 9 
+    Student | Black  | 11 
+    Student | Gelo   | 4
+    Student | Nick   | 9
+*/
