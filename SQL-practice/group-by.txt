@@ -55,7 +55,7 @@ order by Class;
 select Student.Class, count(Teacher.Class) as "number of teacher"
 from Student
 right join Teacher on Student.Class = Teacher.Class
-group up Teacher.Class
+group up Student.Class
 order by Class;
 # output :
     Class | number of teacher
