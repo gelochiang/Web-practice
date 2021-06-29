@@ -1,0 +1,55 @@
+/*
+// Let's look at a selection from the "Student" table :
++-------------------------+
+Name   | No | Score | Class
+===========================
+Mickle | 7  | 95    | A
+Black  | 11 | 84    | A
+Jack   | 9  | 92    | B
+Gelo   | 2  | 75    | A
+Ann    | 6  | 98    | B
+Leo    | 19 | 62    | C
++-------------------------+
+
+// Then, look at a selection from the "Teacher" table :
++-----------------------+
+Class | TeacherName | Old
+=========================
+A     | Mr.Bob      | 61
+B     | Mr.Bean     | 42
+C     | Ms.Lina     | 54
++-----------------------+
+
+// insert into select example :
+insert into Student (Name, Class)
+select TeacherName, Class from Teacher;
+# output :
+    Name    | No   | Score | Class
+    ==============================
+    Mickle  | 7    | 95    | A
+    Black   | 11   | 84    | A
+    Jack    | 9    | 92    | B
+    Gelo    | 2    | 75    | A
+    Ann     | 6    | 98    | B
+    Leo     | 19   | 62    | C
+    Mr.Bob  | null | null  | A
+    Mr.Bean | null | null  | B
+    Ms.Lina | null | null  | C
+
+// insert into with where example :
+insert into Student (Name, Class)
+select TeacherName, Class from Teacher
+where Old = 61 or Old = 42;
+# output :
+# output :
+    Name    | No   | Score | Class
+    ==============================
+    Mickle  | 7    | 95    | A
+    Black   | 11   | 84    | A
+    Jack    | 9    | 92    | B
+    Gelo    | 2    | 75    | A
+    Ann     | 6    | 98    | B
+    Leo     | 19   | 62    | C
+    Mr.Bob  | null | null  | A
+    Mr.Bean | null | null  | B
+*/
