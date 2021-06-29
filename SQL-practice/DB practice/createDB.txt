@@ -1,0 +1,7 @@
+/*
+// create DB syntax :
+create database db_name;
+
+// create DB example :
+create database testDB;
+*/
