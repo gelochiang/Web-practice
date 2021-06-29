@@ -1,0 +1,46 @@
+/*
+// Let's look at a selection from the "Student" table :
++-----------------------------------+
+Name   | No | Score1 | Score2 | Class
+=====================================
+Mickle | 7  | 95     | null   | A
+Black  | 11 | null   | 93     | A
+Jack   | 9  | 92     | 84     | B
+Gelo   | 2  | 75     | 92     | A
+Ann    | 6  | 98     | null   | B
+Leo    | 19 | 62     | 100    | C
++-----------------------------------+
+// Suppose that the "Score1 & 2" column is optional, and may contain null values.
+look at the following select statement :
+select Name, Score1 + Score2 as FinalScore from Strdent;
+# output :
+    Name   | FinalScore
+    ===================
+    Mickle | null 
+    Black  | null  
+    Jack   | 176  
+    Gelo   | 167  
+    Ann    | null  
+    Leo    | 162  
+// In the example above, if any of the "Scroe1 & 2" values
+   are null, the result will be null
+
+MySQL :
+// infull() example :
+select Name, ifnull(Score1, 0) from Student;
+---------------------or---------------------
+// coalesce() example :
+select Name, coalesce(Score1, 0) from Student;
+
+SQL Server :
+// isnull() example :
+select Name, isnull(Score1, 0) from Student;
+
+MS Access :
+// isnull() example :
+select Name, iif(isnull(Score1), 0, Score1) from Student;
+
+Oracle :
+// nvl() example :
+select Name, nvl(Score1, 0) from Student;
+*/
