@@ -1,0 +1,44 @@
+/*
+Stored Procedures for SQL Server
+// stored procedure syntax :
+create procedure as sql_statement go;
+
+// execute a stored procedrue syntax :
+exec procedure_name;
+*/
+
+/*
+// Let's look at a selection from the "Student" table :
++-------------------------+
+Name   | No | Score | Class
+===========================
+Mickle | 7  | 95    | A
+Black  | 11 | 84    | A
+Jack   | 9  | 92    | B
+Gelo   | 2  | 75    | A
+Ann    | 6  | 98    | B
+Leo    | 19 | 62    | C
++-------------------------+
+// stored procedure example :
+create procedure SelectAllStudent
+as select * from Student go;
+
+// exec the stored procedure above example :
+exec SelectAllStudent;
+
+// stored procedure with one parmeter example :
+creature procedrue SelectAllStudent @Score nvarchar(62)
+as select * from Student
+where Score = @Score go;
+
+// exec the stored procedrue above example :
+exec SelectAllStudent @Score = 98;
+
+// stored procedure with multiple parameters example :
+create procedrue SelectAllStudent @Score nvarchar(95), @No nvarchar(7)
+as select * from Student
+where Score = @Score and No = @No go;
+
+// exec the stored procedrue abobe example :
+exec SelectAllStudent @Score = 92, @No = 18;
+*/
