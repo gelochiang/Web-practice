@@ -1,0 +1,18 @@
+/*
+! NOTE : The examples in this chapter will not work in Firefox and MS Edge.
+         Comments are not supported in MS Access DB.
+         Firefox and MS Edge are using MS Access DB in our example.
+
+// single line comments example :
+--select all :
+select * from Student;
+
+// orther same example :
+select * from Student --select all with end of a line.
+
+// multi-line comments example :
+/*
+condition
+*/
+
+*/
