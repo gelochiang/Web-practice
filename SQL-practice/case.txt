@@ -1,0 +1,54 @@
+/*
+The case statement goes through conditions and retruns a value when the first condition
+is met (like an if-then-else statement). So, once a condition is true, it will stop
+reading and return the result. If no conditions are true, it rerutns value in the else clause.
+
+If there is no else part and no conditions are true, it returns null.
+
+// case syntax :
+case
+    when condition1 then resunt1
+    when condition2 then result2
+    when conditionN then resultN
+    else result
+end;
+*/
+
+/*
+// Let's look at a selection from the "Student" table :
++-------------------------+
+Name   | No | Score | Class
+===========================
+Mickle | 7  | 95    | A
+Black  | 11 | 84    | A
+Jack   | 9  | 92    | B
+Gelo   | 2  | 75    | A
+Ann    | 6  | 98    | B
+Leo    | 19 | 62    | C
++-------------------------+
+// case example :
+select Name, Score,
+case
+    when Score >= 85 then "Great"
+    when Score >= 80 then "Good"
+    when Score >= 75 then "Fine"
+    else "Study Hard Bro."
+end as "Comments"
+from Student;
+# output :
+    Name   | Score | Comments
+    ================================
+    Mickle | 95    | Great
+    Black  | 84    | Good
+    Jack   | 92    | Great
+    Gelo   | 75    | Fine
+    Ann    | 98    | Great
+    Leo    | 62    | Study Hard Bro.
+    
+// case with null example :
+select Name, Score, Comments from Student
+order by (case
+when Score is null then Comments // It's just example to look what to do it.
+else Score
+end);
+*/
