@@ -1,0 +1,41 @@
+/*
+The select into statement copies data from one table into a new table.
+
+// select into (Copy all columns into a new table) syntax :
+select * into newtable [in externaldb] from oldtable
+where condition;
+
+// selcet into (Copy only some columns into a new table) syntax :
+select column1, column2, column3, ... into newtable [in externaldb] from old table
+where condition;
+*/
+
+/*
+// select into example :
+select * into StudentBackup2021 from Student;
+
+// select into with in example :
+select * into StudentBackup2021 in "Backup.mdb" // in : uesed to copy the table into a new table in another db
+from Student;
+
+// select few columns into example :
+select Name, No into Studentbackup2021 from Student;
+
+// select into with where example :
+select * into StudentBackup2021 from Student
+where Class = "A";
+
+// select more than one table into example :
+select Student.Name, Teacher.TeacherName
+into StudentTeacherBackup2021
+from Student
+left join Teacher on Student.Class = Teacher.Class;
+
+@ Tip : select into can also be used to create a new, empty table
+        using the scherma of another.Just add a where clause that 
+        causes the query to return no data
+
+// By above Tip example :
+select * into newtable from oldtable
+where 1 = 0;
+*/
