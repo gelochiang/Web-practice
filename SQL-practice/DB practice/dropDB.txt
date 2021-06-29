@@ -1,0 +1,10 @@
+/*
+// drop DB syntax :
+drop database DB_name;
+
+! NOTE : Be careful before dropping a DB. Deleting a DB will
+         result in loss of complete information stored in the DB
+
+// drop DB example :
+drop database testDB;
+*/
