@@ -4,4 +4,6 @@ create database db_name;
 
 // create DB example :
 create database testDB;
+
+@ Tip : Once DB is created, you can check it in the list of DB with the following SQL command : show databases; 
 */
