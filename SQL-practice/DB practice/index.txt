@@ -1,0 +1,45 @@
+/*
+The create index statement is used to cteate indexes in tables.
+
+Indexes are used to retrieve data from the DB more quickly than otherwise.
+The users can't see the indexes, they are just used to speed up searches/queries.
+
+! NOTE : Updating a table with indexes takes more time than updating a table without
+         (because the indexes also need an update). So, only create indexes on columns
+         that will be frequently searched against.
+
+// create index syntax :
+create index index_name
+on table_name (column1, column2, ...);
+
+// create unique index syntax :
+create unique index index_name
+on table_name (column1, column2, ...);
+
+! NOTE : The syntax for creating indexes varies among different DB.
+         Therefore : Check the syntax for creating indexes in your DB.
+*/
+
+/*
+// create index example :
+create index index_name
+on Student (Name);
+
+// create index with multiple columns example :
+create index idx_NameID
+on Student (Name, ID);
+
+To drop index
+// MS Access example :
+drop index idx_Name on Student;
+
+// SQL Server example :
+drop index Student.idx_Name;
+
+// DB2 / Oracle example :
+drop index idx_Name;
+
+// MySQL example :
+alter table Student
+drop index idx_Name;
+*/
