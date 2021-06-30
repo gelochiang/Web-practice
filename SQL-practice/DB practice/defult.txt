@@ -1,0 +1,55 @@
+/*
+The default constraint is used to set a default value for a column.
+
+The default value will be added to all new records, if no other value is specified.
+*/
+
+/*
+The default on create table
+// MySQL / SQL Server / Oracle / MS Access example :
+create table Parent (
+    Name varchar(255) not null,
+    PhoneNumber int,
+    ID not null unique,
+    City varchar(255) default "Taipei"
+);
+
+// The default constraint can also ve used to insert system values, by
+   using function like getdate() example :
+create table Student(
+    Name varchar(255) not null,
+    ID int not null unique,
+    Birthday date default getdate()
+);
+*/
+
+/*
+default on alter table
+// MySQL example :
+alter table Parent
+alter City default "Taipei";
+
+// SQL Server example :
+alter table Parent
+add constraint df_City
+default "Taipei" for City;
+
+// MS Access example :
+alter table Parent
+alter column City set default "Taipei";
+
+// Oracle example :
+alter table Parent
+modify City default "Taipei";
+*/
+
+/*
+To drop a default
+// MySQL example :
+alter table Parent
+alter City drop default;
+
+// SQL Server / Oracle / MS Access example :
+alter table Parent
+alter column City drop default;
+*/
