@@ -1,0 +1,59 @@
+/*
+Add column in a table
+// add table syntax :
+alter table table_name
+add column_name datatype;
+
+// add table example :
+alter table Student
+add E-mali varchar(255);
+*/
+
+/*
+To delete a column in a table syntax :
+alter table table_name
+drop column column_name;
+
+// drop table example :
+alter table Student
+drop column E-mail;
+*/
+
+/*
+Change the data type of a column in a table
+
+// SQL / MS Access syntax :
+alter table table_name
+alter column column_name datatype;
+
+// My SQL / Oracle (prior version 10G) :
+alter table table_name
+modify column column_name datatype;
+
+// Oracle 10G and later :
+alter table table_name
+modify column_name datatype;
+*/
+
+/*
+// add a column in the table example :
+alter table Student
+add Birthday date;
+# output :
+    Name   | No | Score | Class | Birthday
+    ======================================
+    Mickle | 7  | 95    | A     |
+    Black  | 11 | 84    | A     |
+    Jack   | 9  | 92    | B     |
+    Gelo   | 2  | 75    | A     |
+    Ann    | 6  | 98    | B     |
+    Leo    | 19 | 62    | C     |
+
+// change column name exmaple :
+alter table Student
+alter column Birthday_year;
+
+// delete column example :
+alter table Student
+drop column Birthday;
+*/
