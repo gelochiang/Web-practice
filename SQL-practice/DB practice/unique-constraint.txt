@@ -1,0 +1,65 @@
+/*
+The unique constraint ensures that all values in a column are different.
+
+Bothe the unique and primary key constraints provide a grarantee for uniquness for a column or set of columns.
+
+A primary key constraint automatically has a unique constraint.
+
+Hovever, you can have many unique constraints per table, but only one primary key constranit per table.
+*/
+
+/*
+To unique constraint on create table
+
+// SQL Server / Oracle / MS Accress example :
+create table Parent(
+    Name varchar(255) not null,
+    PhoneNumber int not null unique,
+    age int
+);
+
+// MySQL example :
+create table Parent(
+    Name varchar(255) not null,
+    PhoneNumber int not null,
+    age int,
+    unique (PhoneNumber)
+);
+
+To name a unique constranint, and to define a unique constraint on multiple columns
+
+// MySQL / SQL Server / Oracle / MS Accress example :
+create table Parent(
+    Name varchar(255) not null,
+    PhoneNumber int not null,
+    ID int not null,
+    age int,
+    constraint UC_Parent unique (PhoneNumber, ID)
+);
+*/
+
+/*
+To unique constraint on alter table
+
+// MySQL / SQL Server / Oracle / MS Accress example :
+alter table Parent
+add unique (PhoneNumber);
+
+The more unique constraint on alter table
+
+// MySQL / SQL Server / Oracle / MS Accress example :
+alter table Parent
+add constraint UC_Parent unique (PhoneNumber, ID);
+*/
+
+/*
+To drop a unique constraint
+
+// MySQL example :
+alter table Parent
+drop index UC_Parent;
+
+// SQL Server / Oracle / MS Accress example :
+alter table Parent
+drop constraint UC_Parent;
+*/
