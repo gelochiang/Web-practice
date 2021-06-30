@@ -1,0 +1,14 @@
+/*
+The not null constraint enforces a column to not accept null values.
+
+// not null on create table example :
+create table Parent (
+    Name varchar(255) not null,
+    PhoneNumber int not null,
+    Age int
+);
+
+// not null on alter table
+alter table Parent
+modify Age int not null;
+*/
