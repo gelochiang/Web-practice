@@ -1,0 +1,86 @@
+/*
+The foreign key constraint is used to prevent actions that would desroy links between tables.
+
+A foreign key is a field (or collection of fields) in one table, that refers to the
+primary key in another table.
+
+The table with the foreign key is called the child table, and the table with the primary key 
+is called the rdferenced or parent table.
+*/
+
+/*
+Look at the following two tables 
+// "Student" table :
++--------------+
+Name | SID | Age
+================
+Gelo | 1   | 18
+Ann  | 2   | 7
+Leo  | 3   | 17 
++--------------+
+
+// "Parent" table :
++----------------------+
+Name   | PID | SID | Age
+========================
+Ace    | 3   | 1   | 45
+Lisa   | 2   | 2   | 46
+Chiang | 1   | 3   | 50
++----------------------+
+The SID is the primary key in Student table.
+The SID is the foreign key in Parent table.
+*/
+
+/*
+foreign key on create table
+// MySQL example :
+create table Parent (
+    Name varchar(255) not null,
+    PID int not null,
+    SID int not null,
+    Age int,
+    primary key (PID),
+    foreign key (SID) references Student(SID)
+);
+
+// SQL Server / Oracle / MS Access example :
+create table Parent (
+    Name varchar(255) not null,
+    PID int not null primary key,
+    SID int not null foreign key references Student(SID)
+);
+
+foreign key on multiple columns
+// MySQL / SQL Server / Oracle / MS Access example :
+create tabel Parent (
+    Name varchar(255) not null,
+    PID int not null,
+    SID int not null,
+    primary key (PID),
+    constraint FK_Student foreign key (SID) references Student(SID)
+);
+*/
+
+/*
+foreign key on alter table
+// MySQL / SQL Server / Oracle / MS Access example :
+alter table Parent
+add foreing key (SID) references Student(SID);
+
+foreign key on multiple table
+// MySQL / SQL Server / Oracle / MS Access example :
+alter table Parent
+add constraint FK_Student
+foreign key (SID) references Student(SID);
+*/
+
+/*
+drop a foreign key
+// MySQL example :
+alter table Parent
+drop foreign key FK_Student;
+
+// SQL Server / Oracle / MS Access example :
+alter table Parent
+drop constranint FK_Studnet;
+*/
