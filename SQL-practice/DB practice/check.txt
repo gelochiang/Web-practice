@@ -1,0 +1,59 @@
+/*
+The check constraint is used to limit the value range that can be placed in a column.
+
+If you define a check constraint on a column it will allow only certain values for this column.
+
+If you define a check constraint on a table it can limit the values in certain columns based
+on values in other columns in the row.
+*/
+
+/*
+check on create table
+// MySQL example :
+create table Parent (
+    Name varchar(255) not null,
+    PhoneNumber int not null unique,
+    Age int,
+    check (Age>18)
+);
+
+// SQL Server / Oracle / MS Access example :
+create table Parent (
+    Name varchar(255) not null,
+    PhoneNumber int not null unique,
+    Age int check (Age>18)
+);
+
+To check on multiple columns
+// MySQL / SQL Server / Oracle / MS Access example :
+create table Parent (
+    Name varchar(255) not null,
+    PhoneNumber int not null,
+    Age int,
+    City varchar(255).
+    constraint CHK_Parent check (Age>18 City="Taipei")
+);
+*/
+
+/*
+check on alter table
+// MySQL / SQL Server / Oracle / MS Access example :
+alter table Parent
+add check (Age>18);
+
+check on multiple column alter table
+// MySQL / SQL Server / Oracle / MS Access example :
+alter table Parent
+add constraint CHK_Parent check (Age>18 City="Taipei");
+*/
+
+/*
+drop a check
+// SQL Server / Oracle / MS Access example :
+alter table Parent
+drop constraint CHK_Parent;
+
+// MySQL example :
+alter table Parent
+drop check CHK_Parent;
+*/
