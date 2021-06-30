@@ -1,0 +1,17 @@
+/*
+Constraints can be specified when the table is created with the create table statement,
+or after the table is created with the alter table statement.
+
+// constraint syntax :
+create table table_name(
+    column1 datatype constraint,
+    column2 datatype constraint,
+    ...
+);
+
+SQL constraints are used to specify rules for the data in a table.
+
+Constraints are used to limit the type of data that can go into a table.
+This ensures the accuracy and reliabilty of the data in the table.
+If there is any violation between the constraint and the data action, the action is aborted.
+*/
