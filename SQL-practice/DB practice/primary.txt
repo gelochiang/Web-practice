@@ -1,0 +1,70 @@
+/*
+The primary key constraint uniquely identifies each record in a table.
+
+Primary keys must contain unique values, and cannot contain null values.
+
+A table can have only one primary key; and in the table, this primary key can comsist of
+single or multiple columns (fields).
+*/
+
+/*
+To primary key on create table
+
+// MySQL example :
+create table Parent (
+    Name varchar(255) not null,
+    PhoneNumber int not null,
+    Age int not null,
+    primary key (PhoneNumber)
+);
+
+// SQL Server / Oracle / MS Access example :
+create table Parent (
+    Name varchar(255) not null,
+    PhoneNumber int not null primary key,
+    Age int
+);
+*/
+
+/*
+To primary on multiple columns
+
+// My SQL / SQL Server / Oracle / MS Accress example :
+create table Parent (
+    Name varchar(255) not null,
+    PhoneNumber int not null,
+    Age int,
+    ID int not null,
+    constraint PK_Parent primary (PhoneNumber, ID)
+);
+
+! NOTE : In the example above there is only one primary key (PK_Person). However, 
+         the value of the primary key is made up of two columns (PhoneNumber, ID).
+*/
+
+/*
+To primary key on alter table
+// My SQL / SQL Server / Oracle / MS Accress example :
+alter table Person
+add primary key (PhoneNumber);
+
+To primary key on multiple
+// My SQL / SQL Server / Oracle / MS Accress example :
+alter table Parent
+add constraint PK_Parent primary key (PhoneNumber, ID);
+
+! NOTE : If you use alter table to add a primary key, the primary key column(s) must
+         have been declared to not contain null values (when the table was first created).
+*/
+
+/*
+To drop primary key constraint
+
+// MySQL example :
+alter table Parent
+drop primary key;
+
+// SQL Server / Oracle / MS Access :
+alter table Parent
+drop constraint PK_Parent;
+*/
