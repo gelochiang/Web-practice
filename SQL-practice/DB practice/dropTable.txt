@@ -1,0 +1,17 @@
+/*
+// drop table syntax :
+drop table table_name;
+
+! NOTE : Be careful before dropping a table. Deleting a table will result in loss
+         of complete information stored in the table.
+
+// drop table example :
+drop table Student;
+*/
+
+/*
+The truncate table statement is used to delete the data inside a table, but not the table itself.
+
+// truncate table syntax :
+truncate table Student;
+*/
