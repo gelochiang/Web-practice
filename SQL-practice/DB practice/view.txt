@@ -1,0 +1,61 @@
+/*
+// create view syntax :
+create view view_name as
+selcet column1, column2, ...
+from table_name
+where condition;
+
+! NOTE : A view always shows up-to-date data.
+         The DB engine recreates the view, every time a user queries it.
+*/
+
+/*
+// create view example :
+create view "View of Student" as
+Select Name, Score
+from Student
+where Score >= 80;
+
+// query the view above example :
+select * from "View of Student";
+# output :
+    Name | Score
+    Gelo | 80
+    Ace  | 100
+    Ann  | 94
+
+// orther example :
+create view "High than AVG" as
+select Name, Score from Student
+where score > (select avg(score) from Student);
+
+// query the view above example :
+select * from "High than "AVG";
+*/
+
+/*
+// updating view syntax :
+create or replace view "view_name as
+select column1, column2, ...
+from table_name
+where condition;
+
+// updating view example :
+create or replace view "View of Student" as
+Select Name, NO, Score
+from Student
+where Score >= 80;
+# output :
+    Name | NO | Score
+    Gelo | 4  | 80
+    Ace  | 12 | 100
+    Ann  | 23 | 94
+*/
+
+/*
+// drop view syntax :
+drop view view_name;
+
+// drop view example :
+drop view "View of Student";
+*/
