@@ -1,0 +1,49 @@
+/*
+date data type
+// MySQL :
+· date - fromat YYYY-MM-DD
+· datetime - format: YYYY-MM-DD HH:MI:SS
+· timestamp - format: YYYY-MM-DD HH:MI:SS
+· year - format YYYY or YY
+
+// SQL Server :
+· date - fromat YYYY-MM-DD
+· datetime - format: YYYY-MM-DD HH:MI:SS
+· timestamp - format: YYYY-MM-DD HH:MI:SS
+· year - format: a unique number
+
+! NOTE : The date types are chosen for a column when you create a new table in your DB.
+*/
+
+/*
+Look at the table "Student"
++--------------------+
+ID | Name | Birthday
+======================
+1  | Gelo | 2003-02-18
+2  | Andy | 2003-07-29
+3  | Jack | 2003-08-07
++--------------------+
+// select date example :
+select * from Student where Birthday="2003-02-18"
+# output :
+ID | Name | Birthday
+======================
+1  | Gelo | 2003-02-18
+
+! NOTE : Two dates can easily be compared if there no time component involved.
+
+Now look the different table "Student2"
++-----------------------------+
+ID | Name | Birthday
+===============================
+1  | Gelo | 2003-02-18 18:28:08
+2  | Andy | 2003-07-29 07:23:46
+3  | Jack | 2003-08-07 12:56:21
++-----------------------------+
+select datetime example :
+select * from Student2 where Birthday="2003-02-18 18:28:08";
+
+@ Tip : To keep your queries simple and easy to maintain, 
+        do not use time-components in your dates, unless you have to.
+*/
