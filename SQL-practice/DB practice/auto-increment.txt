@@ -1,0 +1,54 @@
+/*
+Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table.
+
+Often this is the primary key field that we would like to be created automatically every time a new record is inserted.
+
+To auto-increment on create table
+// MySQL example :
+create table Parent (
+    Name varchar(255) not null,
+    PhoneNumber int not null,
+    ID int not null auto_increment,
+    Age int,
+    primary key (ID)
+);
+
+The starting value for auto_increment is 1, and it will increment by 1 for each new record.
+// To let the auto_increment sequence start with another value, use the following statement :
+alter table Parent auto_increment=10; // And it will start at 10.
+
+// SQL Server example :
+create table Parent (
+    Name varchar(255) not null,
+    PhoneNumber int not null,
+    ID int identity(10,1) primary key,
+    Age int
+);
+The MS SQL Server uses the identity keyword to perform an auto-increment feature.
+
+In example above, the starting value for identity is 10, and it will increment by 1 for each new record.
+
+@ Tip : To specify that the "ID" column should start at value 100 and increment by 2, change it to identity(100,2).
+
+// MS Access example :
+create table Parent (
+    Name varchar(255) not null,
+    PhoneNumber int not null,
+    ID autoincrement primary key,
+    Age int
+);
+
+@ Tip : To specify that the "Parent" column should start at value 100 and increment by 2, change the autoincrement to autoincrement(100,2).
+
+// Oracle example :
+create Parent ID
+minvalue 1
+start with 100
+increment by 2
+cache 10;
+
+The code above creates a sequence object called ID, that starts with 100 and will increment by 2.
+It will also cache up to 10 values for performance. The cache option specifies how many sequence
+values will be stored in memory for faster access.
+*/
+
